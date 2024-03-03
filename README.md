@@ -5,8 +5,8 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - [Laravel](https://laravel.com/)
 - [Laravel Jetstream](https://jetstream.laravel.com/) converted to React.js using [Laravel Jetstream React CLI](https://github.com/ozziexsh/laravel-jetstream-react)
 - [InertiaJs](https://inertiajs.com/)
-- [Laravel Telescope](https://laravel.com/docs/10.x/telescope))
-- [Laravel Horizon](https://laravel.com/docs/10.x/horizon))
+- [Laravel Telescope](https://laravel.com/docs/10.x/telescope)
+- [Laravel Horizon](https://laravel.com/docs/10.x/horizon)
 - [Laravel Nova](https://nova.laravel.com/)
 
 ## Learning Laravel
