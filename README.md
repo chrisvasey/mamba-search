@@ -9,6 +9,43 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - [Laravel Horizon](https://laravel.com/docs/10.x/horizon)
 - [Laravel Nova](https://nova.laravel.com/)
 
+## Getting started
+
+Use the "Use this template" button on the top right of the Repos GitHub to start a new project.
+Clone this new repo, CD to the project and run the following commands to setup
+``` bash
+composer install
+
+# generate the app encryption key. This saves to your .env file
+php artisan key:generate
+
+# this creates a symlink between the apps /storage/public folder and the /public directory to expose public files
+php artisan storage:link
+
+# creates database tables 
+php artisan migrate
+
+npm install
+
+# build frontend assets
+npm run build
+```
+
+## Development
+
+During development, you can automatically watch for frontend file changes and build these assets using:
+`npm run dev`
+
+To run tests, you can use the following:
+`php artisan test`
+
+To view the telescope debugging dashboard, visit `https://app-url.test/telescope`.
+To show the debug bar when developing locally, make sure that `TELESCOPE_TOOLBAR_ENABLED=true` is set in your `.env` file.
+You can find more info on the Laravel telescope [here](https://laravel.com/docs/10.x/telescope).
+
+
+
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
