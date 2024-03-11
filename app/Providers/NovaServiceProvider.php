@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Nova;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Blade;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
@@ -16,6 +17,15 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+
+        Nova::footer(function ($request) {
+            return Blade::render('
+                <p class="text-center">
+                    © {{ env("APP_NAME" }} {{ date("Y") }}. All rights reserved. </br>
+                    Developed by the <a href="https://kindred.agency" target="_blank" class="link-default">Kindred Agency</a>.
+                </p>
+            ');
+        });
     }
 
     /**
