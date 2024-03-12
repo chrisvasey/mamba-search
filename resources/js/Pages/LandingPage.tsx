@@ -38,7 +38,7 @@ export default function LandingPage() {
       type: 'section',
       content: (
         <p>
-          We're <span className='text-green'>partners in yoursuccess</span>.
+          We're <span className='text-green'>partners in your success</span>.
           <br />
           With visionary leadership, we prioritize <span className='text-green'>holistic growth</span>, ensuring every candidate thrives in their role.
           <br /><br />
