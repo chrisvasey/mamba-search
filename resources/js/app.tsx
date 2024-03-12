@@ -8,7 +8,6 @@ import { RouteContext } from '@/Hooks/useRoute';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 
 import.meta.glob([
-  '../images/**',
   '../fonts/**',
 ]);
 
