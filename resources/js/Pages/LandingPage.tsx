@@ -126,7 +126,7 @@ const Hero = ({ title, content }: {
         <h1 className='text-6xl lg:text-[5.5rem] lg:leading-[5.5rem] font-bold'>
           {title}
         </h1>
-        <p className='mt-4 text-xl lg:text-2xl'>
+        <p className='mt-4 text-xl lg:text-3xl'>
           {content}
         </p>
       </div>
