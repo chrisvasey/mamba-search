@@ -15,9 +15,15 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Diagramm', ...defaultTheme.fontFamily.sans],
             },
-        },
+            colors: {
+                black: '#000000',
+                white: '#FFFFFF',
+                'off-black': '#141414',
+                green: '#81A45E',
+            },
+        },        
     },
 
     plugins: [forms, typography],
