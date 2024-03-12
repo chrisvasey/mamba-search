@@ -25,7 +25,7 @@ export default function LandingPage() {
       type: 'section',
       content: (
         <>
-          <p className='mt-4 lg:mt-0 text-3xl mx-4 font-bold'>
+          <p>
             With a unique blend of strategic expertise and compassionate <span className='text-green'>leadership</span> in the tech and sales sectors.
             <br /><br />
             Find top-tier talent or <span className='text-green'>advance your career</span>
@@ -37,7 +37,7 @@ export default function LandingPage() {
       title: "At Mamba Search, we're More than just a placement agency",
       type: 'section',
       content: (
-        <p className='mt-4 lg:mt-0 text-3xl mx-4 font-bold'>
+        <p>
           We're <span className='text-green'>partners in yoursuccess</span>.
           <br />
           With visionary leadership, we prioritize <span className='text-green'>holistic growth</span>, ensuring every candidate thrives in their role.
@@ -50,7 +50,7 @@ export default function LandingPage() {
       title: "Experience the difference with Mamba Search.",
       type: 'section',
       content: (
-        <p className='mt-4 lg:mt-0 text-3xl mx-4 font-bold'>
+        <p>
           Providing a unique end-to-end <span className='text-green'>health and wellbeing</span> experiences that drive continuous <span className='text-green'>growth</span> and <span className='text-green'>optimal performance</span> for our clients and candidates.
           <br /><br />
           Together, we <span className='text-green'>redefine success</span>, creating a community where greatness knows no bounds. Join us at Mamba Search, where <span className='text-green'>greatness is not just a goal</span>, but a way of life.
@@ -58,7 +58,7 @@ export default function LandingPage() {
       )
     },
     {
-      title: "Get in touch today",
+      title: "Get in touch today.",
       type: 'contact',
       button: {
         text: 'Get Started',
@@ -91,15 +91,15 @@ export default function LandingPage() {
               />
             )
 
-            case 'contact':
-              return (
-                <Contact
-                  key={index}
-                  title={block.title}
-                  button={block.button}
-                  odd={index % 2 != 0}
-                />
-              )
+          case 'contact':
+            return (
+              <Contact
+                key={index}
+                title={block.title}
+                button={block.button}
+                odd={index % 2 != 0}
+              />
+            )
 
           default:
             break;
@@ -123,10 +123,10 @@ const Hero = ({ title, content }: {
     <div className='flex justify-center items-center h-100 col-span-1 lg:col-span-3 '>
       <div className='text-center lg:text-left max-w-[900px]'>
         <img className='h-auto w-full max-w-[280px] mb-12 mx-auto block lg:hidden' src={mambaLogo} />
-        <h1 className='text-[5.5rem] leading-[5.5rem] font-bold'>
+        <h1 className='text-6xl lg:text-[5.5rem] lg:leading-[5.5rem] font-bold'>
           {title}
         </h1>
-        <p className='mt-4 text-2xl'>
+        <p className='mt-4 text-xl lg:text-2xl'>
           {content}
         </p>
       </div>
@@ -145,25 +145,27 @@ const Section = ({ title, content, odd }: {
   odd: boolean
 }) => (
   <div className={clsx(
-    'relative min-h-screen flex flex-col lg:grid grid-cols-1 gap-x-4 mx-4 items-center justify-center',
+    'relative min-h-screen flex flex-col lg:grid grid-cols-1 gap-x-4 py-16 lg:py-0 px-4 items-center justify-center',
     odd && 'bg-white/10',
     title && 'lg:grid-cols-2',
   )}>
     {title && (
       <div className='flex h-100 col-span-1'>
-
         <div className='w-full max-w-[900px]'>
-
           <div className='text-center lg:text-left mx-8'>
-            <h1 className='text-[5rem] leading-[5rem] font-bold'>
+            <h1 className='text-5xl lg:text-[5rem] lg:leading-[5rem] font-bold'>
               {title}
             </h1>
           </div>
         </div>
       </div>
     )}
-    <div className={clsx(!title && 'text-center')}>
-      {content}
+    <div className={clsx(
+      'mt-8 lg:mt-0 text-center lg:text-left',
+      !title && 'text-center')}>
+      <p className='mt-4 lg:mt-0 text-xl lg:text-3xl mx-4 font-bold'>
+        {content}
+      </p>
     </div>
   </div>
 )
@@ -182,17 +184,16 @@ const Contact = ({ title, button, odd }: {
   )}>
     <img className='h-auto w-full max-w-[280px] mx-auto block' src={mambaLogo} />
     <div className='mx-8'>
-            <h1 className='text-[5rem] leading-[5rem] font-bold'>
-              {title}
-            </h1>
-      </div>
-      <a
-        href={button.link}
-        className="rounded-md bg-green px-3.5 py-2.5 text-2xl font-semibold  shadow-sm white:bg-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green ring-2 ring-green  hover:bg-transparent hover:text-green"
-      >
-        {button.text}
-      </a>
-
+      <h1 className='text-3xl lg:text-[3rem] lg:leading-[3rem] font-bold text-center'>
+        {title}
+      </h1>
+    </div>
+    <a
+      href={button.link}
+      className="rounded-md bg-green px-3.5 py-2.5 text-2xl font-semibold  shadow-sm white:bg-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green ring-2 ring-green  hover:bg-transparent hover:text-green"
+    >
+      {button.text}
+    </a>
   </div>
 )
 
