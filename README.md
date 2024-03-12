@@ -43,8 +43,11 @@ To view the telescope debugging dashboard, visit `https://app-url.test/telescope
 To show the debug bar when developing locally, make sure that `TELESCOPE_TOOLBAR_ENABLED=true` is set in your `.env` file.
 You can find more info on the Laravel telescope [here](https://laravel.com/docs/10.x/telescope).
 
+## Merging changes from the template 
 
-
+Add upstream repo repository
+`git remote add template git@github.com:chrisvasey/kindred-app-template.git`
+Use `git fetch` and cherry pick changes from the template branch.
 
 ## Learning Laravel
 
