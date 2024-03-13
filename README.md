@@ -14,6 +14,13 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 Use the "Use this template" button on the top right of the Repos GitHub to start a new project.
 Clone this new repo, CD to the project and run the following commands to setup
 ``` bash
+# create a .env file from the example and update the local url an DB details for your system
+cp .env.example .env
+
+# create an auth.json file in the root of your project with the Nova licence
+touch auth.json
+
+# install composer deps
 composer install
 
 # generate the app encryption key. This saves to your .env file
