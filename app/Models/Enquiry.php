@@ -7,5 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Enquiry extends Model
 {
-    use HasFactory;
+  use HasFactory;
+
+  protected $fillable = [
+    'first_name',
+    'last_name',
+    'email',
+    'phone',
+    'organisation',
+    'location',
+    'message',
+  ];
 }

@@ -49,11 +49,16 @@ class EnquiryController extends Controller
   {
     //
     $validated = $request->validate([
-      'first_name' => 'string|max:255',
-      'last_name' => 'string|max:255',
-      'email' => 'string|max:255',
+      'first_name' => 'required|string|max:255',
+      'last_name' => 'required|string|max:255',
+      'email' => 'required|string|max:255',
+      'phone' => 'required|string|min:8|max:11',
+      'organisation' => 'string|max:255',
+      'location' => 'string|max:255',
       'message' => 'text|max:255',
     ]);
+
+    $request->enquiry()->create($validated);
 
     return redirect(route('contact'));
   }
