@@ -11,24 +11,10 @@ use Inertia\Response;
 class EnquiryController extends Controller
 {
   /**
-   * Display a listing of the resource.
-   */
-  public function index(): Response
-  {
-    // return response('Mamba Enquiries!');
-    return Inertia::render('Enquiries/Index', [
-      //
-    ]);
-
-    // @todo need to add the route for the contact page here
-  }
-
-  /**
    * Displays contact form
    */
   public function contact(): Response
   {
-    // return response('Mamba Enquiries!');
     return Inertia::render('Contact/Index', [
       //
     ]);
