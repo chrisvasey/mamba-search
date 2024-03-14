@@ -8,8 +8,7 @@ use Laravel\Nova\Http\Middleware\DispatchServingNovaEvent;
 use Laravel\Nova\Http\Middleware\HandleInertiaRequests;
 
 return [
-
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Nova License Key
     |--------------------------------------------------------------------------
@@ -20,9 +19,9 @@ return [
     |
     */
 
-    'license_key' => env('NOVA_LICENSE_KEY'),
+  'license_key' => env('NOVA_LICENSE_KEY'),
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Nova App Name
     |--------------------------------------------------------------------------
@@ -33,9 +32,9 @@ return [
     |
     */
 
-    'name' => env('NOVA_APP_NAME', env('APP_NAME')),
+  'name' => env('NOVA_APP_NAME', env('APP_NAME')),
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Nova Domain Name
     |--------------------------------------------------------------------------
@@ -46,9 +45,9 @@ return [
     |
     */
 
-    'domain' => env('NOVA_DOMAIN_NAME', null),
+  'domain' => env('NOVA_DOMAIN_NAME', null),
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Nova Path
     |--------------------------------------------------------------------------
@@ -59,9 +58,9 @@ return [
     |
     */
 
-    'path' => '/nova',
+  'path' => '/admin',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Nova Authentication Guard
     |--------------------------------------------------------------------------
@@ -72,9 +71,9 @@ return [
     |
     */
 
-    'guard' => env('NOVA_GUARD', null),
+  'guard' => env('NOVA_GUARD', null),
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Nova Password Reset Broker
     |--------------------------------------------------------------------------
@@ -85,9 +84,9 @@ return [
     |
     */
 
-    'passwords' => env('NOVA_PASSWORDS', null),
+  'passwords' => env('NOVA_PASSWORDS', null),
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Nova Route Middleware
     |--------------------------------------------------------------------------
@@ -98,20 +97,16 @@ return [
     |
     */
 
-    'middleware' => [
-        'web',
-        HandleInertiaRequests::class,
-        DispatchServingNovaEvent::class,
-        BootTools::class,
-    ],
+  'middleware' => [
+    'web',
+    HandleInertiaRequests::class,
+    DispatchServingNovaEvent::class,
+    BootTools::class,
+  ],
 
-    'api_middleware' => [
-        'nova',
-        Authenticate::class,
-        Authorize::class,
-    ],
+  'api_middleware' => ['nova', Authenticate::class, Authorize::class],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Nova Pagination Type
     |--------------------------------------------------------------------------
@@ -122,9 +117,9 @@ return [
     |
     */
 
-    'pagination' => 'simple',
+  'pagination' => 'simple',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Nova Storage Disk
     |--------------------------------------------------------------------------
@@ -135,9 +130,9 @@ return [
     |
      */
 
-    'storage_disk' => env('NOVA_STORAGE_DISK', 'public'),
+  'storage_disk' => env('NOVA_STORAGE_DISK', 'public'),
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Nova Currency
     |--------------------------------------------------------------------------
@@ -148,9 +143,9 @@ return [
     |
     */
 
-    'currency' => 'USD',
+  'currency' => 'USD',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Branding
     |--------------------------------------------------------------------------
@@ -162,17 +157,17 @@ return [
     |
     */
 
-    // 'brand' => [
-    //     'logo' => resource_path('/img/example-logo.svg'),
+  // 'brand' => [
+  //     'logo' => resource_path('/img/example-logo.svg'),
 
-    //     'colors' => [
-    //         "400" => "24, 182, 155, 0.5",
-    //         "500" => "24, 182, 155",
-    //         "600" => "24, 182, 155, 0.75",
-    //     ]
-    // ],
+  //     'colors' => [
+  //         "400" => "24, 182, 155, 0.5",
+  //         "500" => "24, 182, 155",
+  //         "600" => "24, 182, 155, 0.75",
+  //     ]
+  // ],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Nova Action Resource Class
     |--------------------------------------------------------------------------
@@ -183,11 +178,11 @@ return [
     |
     */
 
-    'actions' => [
-        'resource' => ActionResource::class,
-    ],
+  'actions' => [
+    'resource' => ActionResource::class,
+  ],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Nova Impersonation Redirection URLs
     |--------------------------------------------------------------------------
@@ -198,9 +193,8 @@ return [
     |
     */
 
-    'impersonation' => [
-        'started' => '/',
-        'stopped' => '/',
-    ],
-
+  'impersonation' => [
+    'started' => '/',
+    'stopped' => '/',
+  ],
 ];
