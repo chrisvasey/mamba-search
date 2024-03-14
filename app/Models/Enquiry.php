@@ -13,9 +13,10 @@ class Enquiry extends Model
     'first_name',
     'last_name',
     'email',
-    'phone',
+    'phone_number',
     'organisation',
     'location',
+    'country',
     'message',
   ];
 }

@@ -18,14 +18,11 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
   return Inertia::render('LandingPage');
-});
+})->name('landing-page');
 
-Route::get('/contact', [EnquiryController::class, 'contact']);
+Route::get('/contact', [EnquiryController::class, 'contact'])->name('contact');
 
-Route::resource('enquiries', EnquiryController::class)->only([
-  'index',
-  'store',
-]);
+Route::resource('enquiry', EnquiryController::class)->only(['index', 'store']);
 // ->middleware(['auth', 'verified']); // Only admin users can view these
 
 Route::middleware([

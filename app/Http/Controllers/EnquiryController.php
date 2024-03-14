@@ -52,15 +52,26 @@ class EnquiryController extends Controller
       'first_name' => 'required|string|max:255',
       'last_name' => 'required|string|max:255',
       'email' => 'required|string|max:255',
-      'phone' => 'required|string|min:8|max:11',
+      'phone_number' => 'required|string|min:8|max:11',
       'organisation' => 'string|max:255',
       'location' => 'string|max:255',
-      'message' => 'text|max:255',
+      'country' => 'string|max:255',
+      'message' => 'string|nullable',
     ]);
 
-    $request->enquiry()->create($validated);
+    $enquiry = Enquiry::create($validated);
 
-    return redirect(route('contact'));
+    if (!$enquiry) {
+      return redirect(route('contact'))->with(
+        'message',
+        'There was an error submitting your enquiry. Please try again later.'
+      );
+    }
+
+    return redirect(route('contact'))->with(
+      'message',
+      'Thank you for your enquiry!'
+    );
   }
 
   /**
