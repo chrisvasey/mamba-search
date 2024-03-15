@@ -14,7 +14,7 @@ export default function PrimaryButton({
     <button
       {...props}
       className={classNames(
-        'inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150',
+        'inline-flex items-center px-4 py-2 bg-green dark:bg-green border border-transparent rounded-md font-semibold text-xs text-white dark:text-white uppercase tracking-widest hover:bg-green dark:hover:bg-green focus:bg-green dark:focus:bg-green active:bg-green dark:active:bg-green focus:outline-none focus:ring-2 focus:ring-green focus:ring-offset-2 dark:focus:ring-offset-green transition ease-in-out duration-150',
         props.className,
       )}
     >
