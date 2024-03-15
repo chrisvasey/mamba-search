@@ -10,7 +10,7 @@ export default function AuthenticationCard({
         <AuthenticationCardLogo />
       </div>
 
-      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">{children}</div>
+      <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">{children}</div>
     </div>
   );
 }

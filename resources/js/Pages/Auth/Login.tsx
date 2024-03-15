@@ -69,7 +69,7 @@ export default function Login({ canResetPassword, status }: Props) {
                 <div className="text-sm">
                   <Link
                     href={route('password.request')}
-                    className="font-semibold text-green hover:text-green"
+                    className="font-semibold text-green dark:text-green hover:text-gray-900 dark:hover:text-gray-100"
                   >
                     Forgot your password?
                   </Link>
@@ -90,28 +90,33 @@ export default function Login({ canResetPassword, status }: Props) {
             </div>
           </div>
 
-          <div className="mt-4">
-            <label className="flex items-center">
-              <Checkbox
-                name="remember"
-                checked={form.data.remember === 'on'}
-                onChange={e =>
-                  form.setData('remember', e.currentTarget.checked ? 'on' : '')
-                }
-              />
-              <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">
-                Remember me
-              </span>
-            </label>
-
-            {/*
+          <div className="mt-2">
+            <div className="flex items-center justify-between">
+              <label className="flex items-center justify-end">
+                <Checkbox
+                  className="rounded dark:bg-gray-900 border-gray-300 dark:border-white text-green shadow-sm focus:ring-green dark:focus:ring-green dark:focus:ring-offset-green'"
+                  name="remember"
+                  checked={form.data.remember === 'on'}
+                  onChange={e =>
+                    form.setData(
+                      'remember',
+                      e.currentTarget.checked ? 'on' : '',
+                    )
+                  }
+                />
+                <span className="ml-2 text-sm text-white dark:text-white">
+                  Remember me
+                </span>
+              </label>
+              <div className="text-sm">
                 <Link
                   href={route('register')}
-                  className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
+                  className="font-semibold text-green dark:text-green hover:text-gray-900 dark:hover:text-gray-100"
                 >
                   Need an account?
                 </Link>
-              */}
+              </div>
+            </div>
           </div>
 
           <div>
@@ -124,7 +129,7 @@ export default function Login({ canResetPassword, status }: Props) {
               )}
               disabled={form.processing}
             >
-              Log in
+              Sign in
             </PrimaryButton>
           </div>
         </form>

@@ -43,64 +43,79 @@ export default function TwoFactorChallenge() {
     <AuthenticationCard>
       <Head title="Two-Factor Confirmation" />
 
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2 className="my-6 text-center text-2xl font-bold leading-9 tracking-tight text-white">
+          Account Authentication
+        </h2>
+      </div>
+
       <div className="mb-4 text-sm text-gray-600 dark:text-gray-400">
         {recovery
           ? 'Please confirm access to your account by entering one of your emergency recovery codes.'
           : 'Please confirm access to your account by entering the authentication code provided by your authenticator application.'}
       </div>
 
-      <form onSubmit={onSubmit}>
-        {recovery ? (
-          <div>
-            <InputLabel htmlFor="recovery_code">Recovery Code</InputLabel>
-            <TextInput
-              id="recovery_code"
-              type="text"
-              className="mt-1 block w-full"
-              value={form.data.recovery_code}
-              onChange={e =>
-                form.setData('recovery_code', e.currentTarget.value)
-              }
-              ref={recoveryCodeRef}
-              autoComplete="one-time-code"
-            />
-            <InputError className="mt-2" message={form.errors.recovery_code} />
-          </div>
-        ) : (
-          <div>
-            <InputLabel htmlFor="code">Code</InputLabel>
-            <TextInput
-              id="code"
-              type="text"
-              inputMode="numeric"
-              className="mt-1 block w-full"
-              value={form.data.code}
-              onChange={e => form.setData('code', e.currentTarget.value)}
-              autoFocus
-              autoComplete="one-time-code"
-              ref={codeRef}
-            />
-            <InputError className="mt-2" message={form.errors.code} />
-          </div>
-        )}
+      <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form className="space-y-6" onSubmit={onSubmit}>
+          {recovery ? (
+            <div>
+              <InputLabel htmlFor="recovery_code">Recovery Code</InputLabel>
+              <div className="mt-2">
+                <TextInput
+                  id="recovery_code"
+                  type="text"
+                  className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-green sm:text-sm sm:leading-6"
+                  value={form.data.recovery_code}
+                  onChange={e =>
+                    form.setData('recovery_code', e.currentTarget.value)
+                  }
+                  ref={recoveryCodeRef}
+                  autoComplete="one-time-code"
+                />
+                <InputError
+                  className="mt-2"
+                  message={form.errors.recovery_code}
+                />
+              </div>
+            </div>
+          ) : (
+            <div>
+              <InputLabel htmlFor="code">Code</InputLabel>
+              <div className="mt-2">
+                <TextInput
+                  id="code"
+                  type="text"
+                  inputMode="numeric"
+                  className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-green sm:text-sm sm:leading-6"
+                  value={form.data.code}
+                  onChange={e => form.setData('code', e.currentTarget.value)}
+                  autoFocus
+                  autoComplete="one-time-code"
+                  ref={codeRef}
+                />
+                <InputError className="mt-2" message={form.errors.code} />
+              </div>
+            </div>
+          )}
 
-        <div className="flex items-center justify-end mt-4">
-          <button
-            type="button"
-            className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 underline cursor-pointer"
-            onClick={toggleRecovery}
-          >
-            {recovery ? 'Use an authentication code' : 'Use a recovery code'}
-          </button>
+          <div className="flex items-center justify-end mt-2">
+            <button
+              type="button"
+              className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 underline cursor-pointer"
+              onClick={toggleRecovery}
+            >
+              {recovery ? 'Use an authentication code' : 'Use a recovery code'}
+            </button>
 
-          <PrimaryButton
-            className={classNames('ml-4', { 'opacity-25': form.processing })}
-            disabled={form.processing}
-          >
-            Log in
-          </PrimaryButton>
-        </div>
-      </form>
+            <PrimaryButton
+              className={classNames('ml-4', { 'opacity-25': form.processing })}
+              disabled={form.processing}
+            >
+              Log in
+            </PrimaryButton>
+          </div>
+        </form>
+      </div>
     </AuthenticationCard>
   );
 }
